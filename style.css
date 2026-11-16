@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #171511;
+    color: #e9dfca;
+    font-family: 'Amiri', serif;
+    overflow-x: hidden;
+}
+
+.background-decoration {
+    position: fixed;
+    inset: 15px;
+    border: 1px solid rgba(180, 145, 90, 0.15);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.intro {
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.top-label {
+    font-family: 'Cormorant Garamond', serif;
+    color: #b99a68;
+    letter-spacing: 5px;
+    font-size: 13px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 9vw, 85px);
+    line-height: 0.95;
+    font-weight: 400;
+    margin: 25px 0;
+}
+
+.intro-text {
+    color: #a99e8b;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.envelope {
+    width: 240px;
+    height: 155px;
+    margin: 70px auto 35px;
+    position: relative;
+    background: #92734e;
+    box-shadow: 0 20px 60px #0009;
+    cursor: pointer;
+    perspective: 700px;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #a88a61;
+}
+
+.letter-inside {
+    position: absolute;
+    width: 195px;
+    height: 135px;
+    left: 22px;
+    top: 5px;
+    background: #eee4d0;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #8b6946;
+    clip-path: polygon(0 0, 50% 65%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #b39467;
+    clip-path: polygon(0 0, 100% 0, 50% 65%);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 3;
+}
+
+.wax-seal {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    background: #6c2925;
+    border: 2px solid #b48b59;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    color: #e8d2a9;
+    transition: 0.4s;
+}
+
+.main-button,
+.next-button {
+    background: transparent;
+    border: 1px solid #ad8e5e;
+    color: #e9dfca;
+    padding: 13px 38px;
+    font-family: 'Amiri', serif;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.main-button:hover,
+.next-button:hover {
+    background: #ad8e5e;
+    color: #171511;
+}
+
+.bottom-label {
+    margin-top: 55px;
+    color: #756c5b;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.letter-section {
+    width: 100%;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+}
+
+.paper {
+    width: min(680px, 100%);
+    background: #eee5d3;
+    color: #382c20;
+    padding: clamp(30px, 7vw, 70px);
+    box-shadow: 0 25px 90px #0009;
+    position: relative;
+}
+
+.paper::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #c5b18f;
+    pointer-events: none;
+}
+
+.paper-top {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: #95774f;
+    letter-spacing: 5px;
+    font-size: 13px;
+}
+
+.ornament {
+    text-align: center;
+    color: #a88a61;
+    font-size: 25px;
+    margin: 25px 0;
+}
+
+.paper h2 {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.letter-text {
+    font-size: 19px;
+    line-height: 2.3;
+}
+
+.letter-text p {
+    margin-bottom: 20px;
+}
+
+.paper-divider {
+    text-align: center;
+    font-size: 30px;
+    color: #a88a61;
+    margin: 30px 0;
+}
+
+.next-button {
+    color: #382c20;
+    border-color: #a88a61;
+    display: block;
+    margin: auto;
+}
+
+.ending {
+    text-align: center;
+    max-width: 650px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+.ending h2 {
+    font-size: 42px;
+    font-weight: 400;
+    margin: 30px 0;
+}
+
+.ending-text {
+    font-size: 20px;
+    line-height: 2.4;
+    color: #d0c4ad;
+}
+
+.ending-text p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 45px;
+    color: #a99e8b;
+    line-height: 2;
+}
+
+.signature span {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    color: #c6a777;
+    font-size: 36px;
+}
+
+.end-line {
+    width: 80px;
+    height: 1px;
+    background: #a88a61;
+    margin: 35px auto;
+}
+
+.final-label {
+    color: #84765f;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 6px;
+    font-size: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .envelope {
+        width: 200px;
+        height: 130px;
+    }
+
+    .letter-text {
+        font-size: 17px;
+        line-height: 2.1;
+    }
+
+    .paper h2 {
+        font-size: 23px;
+    }
+
+    .ending-text {
+        font-size: 17px;
+    }
+
+}.final-love {
+    margin-top: 35px;
+    color: #c6a777;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease;
+}
